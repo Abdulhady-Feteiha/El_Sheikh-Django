@@ -1,0 +1,49 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<h2>عرض بجميع الماكينات في المخازن</h2>
+<table>
+  <tr>
+    <th> الماكينة</th>
+    <th>المخزن</th>
+    <th>الماركة</th>
+    <th>الخصائص</th>
+    <th>المالك</th>
+  </tr>
+
+{% for m in Machine_list %}
+  <tr>
+    <td>{{m.Machine_TYPE}}</td>
+    <td>{{m.Location}}</td>
+    <td>{{m.Mark}}</td>
+    <td>{{m.Features}}</td>
+    <td>{{m.Owner}}</td>
+  </tr>
+{% endfor %}
+</table>
+
+</body>
+</html>
