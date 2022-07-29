@@ -25,7 +25,7 @@ SECRET_KEY = '$5(6(t9b3mu1mc*y6g#44agq^!tvfiloo1o91wt(8!hqphk(o4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Machine',
+    'Transactions',
+    'pages',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -78,6 +81,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+
     }
 }
 
