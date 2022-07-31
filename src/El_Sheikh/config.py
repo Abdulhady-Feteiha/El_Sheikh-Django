@@ -56,5 +56,5 @@ Owners = (
 ('عبدالهادي','عبدالهادي'),
 ('محمد','محمد'),
 )
-
+Operations = (('سحب','سحب'),('ايداع','ايداع'))
 percent_dict = compute_percent_dict(Owners)

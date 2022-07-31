@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'Transactions',
     'pages',
     'crispy_forms',
+    'import_export',
 ]
 
 MIDDLEWARE = [
@@ -128,4 +129,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
+IMPORT_EXPORT_USE_TRANSACTIONS = True
