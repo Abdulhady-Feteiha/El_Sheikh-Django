@@ -1,5 +1,5 @@
 
-
+from utils import *
 Machine_types = (
 ("منشار","منشار"),
 ('فارة','فارة'),
@@ -56,3 +56,5 @@ Owners = (
 ('عبدالهادي','عبدالهادي'),
 ('محمد','محمد'),
 )
+
+percent_dict = compute_percent_dict(Owners)
