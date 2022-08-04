@@ -8,7 +8,7 @@ class MachineResource(resources.ModelResource):
     
     class Meta:
         model = machine
-class MachineAdmin(admin.ModelAdmin):
+class MachineAdmin(ImportExportModelAdmin,admin.ModelAdmin):
     # list_display = ['Machine_TYPE', 'Location','Mark', 'Features', 'Mama','Yousra','Abdullah','Abdulhady','Mohamed','purchase_date','purchase_price','sell_date','sell_price',]
     list_display = ['Machine_TYPE', 'Location','Mark', 'Features','Owners','purchase_date','purchase_price','sell_date','sell_price',]
 

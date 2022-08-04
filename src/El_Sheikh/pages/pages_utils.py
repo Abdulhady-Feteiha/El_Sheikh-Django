@@ -10,12 +10,10 @@ from config import *
 
 def Make_a_report(machine,transaction,Owner,Month,Year):
     all_sold_machines = machine.objects.filter(sell_date__isnull=False,Owners__contains=Owner)
-    print(all_sold_machines)
     all_purchased_machines = machine.objects.filter(purchase_date__isnull=False,Owners__contains=Owner)
     
-    current_sold_machines = machine.objects.filter(sell_date__year__gte=Year,sell_date__month__gte=Month,Owners__contains=Owner)
-    print(current_sold_machines)
-    current_purchased_machines = machine.objects.filter(purchase_date__year__gte=Year,purchase_date__month__gte=Month,Owners__contains=Owner)
+    current_sold_machines = machine.objects.filter(sell_date__year__gte=Year,sell_date__month__gte=Month,sell_date__year__lte=Year,sell_date__month__lte=Month,Owners__contains=Owner)
+    current_purchased_machines = machine.objects.filter(purchase_date__year__gte=Year,purchase_date__month__gte=Month,purchase_date__year__lte=Year,purchase_date__month__lte=Month,Owners__contains=Owner)
     
     all_Profit, all_Investment,_ = compute_finance(all_sold_machines,all_purchased_machines,Owner)
     current_Profit, current_Investment,Surplus = compute_finance(current_sold_machines,current_purchased_machines,Owner)
@@ -34,12 +32,9 @@ def compute_finance(sold_machines,purchased_machines,Owner):
     Investment = 0
     Profit = 0
     Surplus = 0
-    purchase_price = 0
     if sold_machines:
         for m in sold_machines:
-            print(m.sell_date)
             Profit = Profit + compute_percentage(Owner,m,"Sell")
-            purchase_price = purchase_price + m.purchase_price
             Surplus = Surplus + compute_percentage(Owner,m,"Sell") - compute_percentage(Owner,m,"Purchase")
     else:
         Profit = "لم يتم بيع أي ماكينات في هذا الشهر"
