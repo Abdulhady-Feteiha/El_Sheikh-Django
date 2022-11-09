@@ -14,7 +14,7 @@ class machine(models.Model):
   Location = models.CharField("المخزن",max_length=15, choices=Locations, default='فهمي')
   Mark = models.CharField("الماركة",max_length=15, choices=Marks, default='بلدي')
   Features = models.TextField("خصائص",default=None,null=True,blank=True)
-  Owners = MultiSelectField("المالك",choices=Owners)
+  Owners = MultiSelectField("المالك",max_length=20,choices=Owners)
   purchase_date = models.DateField("تاريخ الشراء",blank=True,null=True)
   purchase_price = models.IntegerField("سعر الشراء",blank=True,null=True)
   sell_date = models.DateField("تاريخ البيع",blank=True,null=True)

@@ -2,7 +2,7 @@ from django.shortcuts import render,HttpResponseRedirect
 from .forms import report_request_Form
 from .pages_utils import Make_a_report
 from Machine.models import machine
-from Transactions.models import transaction
+from transactions.models import transaction
 def home(request):
    return render(request, "home.html", {})
 

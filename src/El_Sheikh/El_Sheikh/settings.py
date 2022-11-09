@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Machine',
-    'Transactions',
+    'transactions',
     'pages',
     'crispy_forms',
     'import_export',
@@ -133,3 +133,4 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 IMPORT_EXPORT_USE_TRANSACTIONS = True
+

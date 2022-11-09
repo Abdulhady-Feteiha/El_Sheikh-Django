@@ -35,7 +35,8 @@ def compute_finance(sold_machines,purchased_machines,Owner):
     if sold_machines:
         for m in sold_machines:
             Profit = Profit + compute_percentage(Owner,m,"Sell")
-            Surplus = Surplus + compute_percentage(Owner,m,"Sell") - compute_percentage(Owner,m,"Purchase")
+            if m.purchase_price:
+                Surplus = Surplus + compute_percentage(Owner,m,"Sell") - compute_percentage(Owner,m,"Purchase")
     else:
         Profit = "لم يتم بيع أي ماكينات في هذا الشهر"
     if purchased_machines:
